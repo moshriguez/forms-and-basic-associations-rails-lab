@@ -14,9 +14,9 @@ class Song < ActiveRecord::Base
     self.artist ? self.artist.name : nil
   end
 
-  def notes=(content)
+  def notes=(content_arr)
     # binding.pry
-    content.each do |n|
+    content_arr.each do |n|
       self.notes << Note.create(content: n)
     end
   end
